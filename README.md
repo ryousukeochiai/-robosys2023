@@ -8,8 +8,7 @@
 * [ryuichiueda/my_slides robosys_2022](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)
 
 # plusコマンド
-![test]([![test](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml))
-↑ テスト結果を反映したバッジの画像が埋め込まれる。
+[![test](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml)
 
 標準入力から読み込んだ数字を足す。
 
