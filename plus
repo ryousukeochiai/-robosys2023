@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-#SPDX-FileCopyrightText: 2023 Ryousuke Ochiai
-#SPDX-License-Identifier: BSD-3-Clause
+# SPDX-License-Identifier: BSD-3-Clause
 import sys
 
 def tonum(s):
@@ -9,12 +8,31 @@ def tonum(s):
     except:
         return float(s)
 
+lines = list(sys.stdin)
 
-ans = 0.0
-for line in sys.stdin:
+ans_plus_1 = 0.0
+ans_square_1 = 0.0
+ans_plus_2 = 0.0
+ans_square_2 = 0.0
+
+# 計算1: Σk および Σk^2
+for line in lines:
     line = line.rstrip()
-    ans += tonum(line)
+    num = tonum(line)
+    ans_plus_1 += num
+    ans_square_1 += num ** 2
 
+# 計算2: Σk および Σk^2（Σ計算によって求めた場合）
+last_line = tonum(lines[-1].strip())
+ans_plus_2 = (last_line * (last_line + 1)) / 2
+ans_square_2 = (last_line * (last_line + 1) * (2 * last_line + 1)) / 6
 
-print(ans)
+# 結果の表示
+print("n = " + str(last_line) + "\n")
+print("for文によって求めた場合")
+print(" Σk = " + str(ans_plus_1))
+print(" Σk^2 = " + str(ans_square_1) + "\n")
+print("Σ計算によって求めた場合")
+print(" Σk = n(n+1)/2 = " + str(ans_plus_2))
+print(" Σk^2 = n(n+1)(2n+1)/6 = " + str(ans_square_2))
 
