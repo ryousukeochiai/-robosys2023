@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # SPDX-License-Identifier: BSD-3-Clause
 import sys
+import os  # 追加
 
 def tonum(s):
     try:
@@ -10,7 +11,8 @@ def tonum(s):
             return float(s)
         except ValueError:
             print(f"Error: Invalid input '{s}'")
-            sys.exit(1)
+            sys.stdout.flush()  # 追加
+            os._exit(1)  # 変更
 
 lines = list(sys.stdin)
 
