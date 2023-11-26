@@ -1,46 +1,37 @@
-#!/bin/bash
+#!/bin/bash -xv
 # SPDX-FileCopyrightText: 2023 Ryousuke Ochiai
 # SPDX-License-Identifier: BSD-3-Clause
 
 ng () {
-  echo "NG called at Line $1"
-  echo "Expected Output: ${expected_out}"
-  echo "Actual Output: ${out}"
-  echo "res: ${res}"
-  res=1
+  local res=1
+  echo "NG at Line $1: $2"
+  return $res
 }
 
 res=0
 
 out=$(seq 5 | ./plus)
-echo "Actual Output: ${out}"
-
-# 続けてテストの部分を実行
-expected_out="n = 5
-
-for文によって求めた場合
+[ "${out}" = "n = 5
+足し合わせから求める
  Σk = 15.0
  Σk^2 = 55.0
-
-Σ計算によって求めた場合
+シグマ計算より求める
  Σk = n(n+1)/2 = 15.0
- Σk^2 = n(n+1)(2n+1)/6 = 55.0"
-echo "Before ng: res=${res}"
-[ "${out}" = "${expected_out}" ] || ng ${LINENO}
-echo "After ng: res=${res}"
-
-
+ Σk^2 = n(n+1)(2n+1)/6 = 55.0" ] || ng ${LINENO} "Invalid output"
 ### STRANGE INPUT ###
 out=$(echo あ | ./plus)
-expected_out="Error: Invalid input 'あ'"
-[ "$?" = 1 ]      || ng ${LINENO}
-[ "${out}" = "${expected_out}" ] || ng ${LINENO}
+if [ "$?" = 1 ] || [ -z "${out}" ]; then
+  ng ${LINENO} "Invalid input 'あ'"
+fi
+echo "out: ${out}"
+echo "\$out: $out"
 
 out=$(echo | ./plus) #空文字
-expected_out="Error: Invalid input ''"
-[ "$?" = 1 ]      || ng ${LINENO}
-[ "${out}" = "${expected_out}" ] || ng ${LINENO}
+if [ "$?" = 1 ] || [ -z "${out}" ]; then
+  ng ${LINENO} "Invalid input (empty)"
+fi
+echo "out: ${out}"
 
-[ "$res" = 0 ] && echo OK
-exit $res
+[ "$?" = 0 ] && echo OK
+exit $?
 

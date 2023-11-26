@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # SPDX-License-Identifier: BSD-3-Clause
 import sys
-import os
 
 def tonum(s):
     try:
@@ -11,7 +10,6 @@ def tonum(s):
             return float(s)
         except ValueError:
             print(f"Error: Invalid input '{s}'")
-            sys.stdout.flush()
             sys.exit(1)
 
 lines = list(sys.stdin)
@@ -34,11 +32,10 @@ ans_plus_2 = (last_line * (last_line + 1)) / 2
 ans_square_2 = (last_line * (last_line + 1) * (2 * last_line + 1)) / 6
 
 # 結果の表示
-print("n = " + str(last_line) + "\n")
-print("for文によって求めた場合")
-print(" Σk = " + str(ans_plus_1))
-print(" Σk^2 = " + str(ans_square_1) + "\n")
-print("Σ計算によって求めた場合")
-print(" Σk = n(n+1)/2 = " + str(ans_plus_2))
-print(" Σk^2 = n(n+1)(2n+1)/6 = " + str(ans_square_2))
-
+print("n = "+str(last_line))
+print("足し合わせから求める")
+print(" Σk = "+str(ans_plus_1))
+print(" Σk^2 = "+str(ans_square_1))
+print("シグマ計算より求める")
+print(" Σk = n(n+1)/2 = "+str(ans_plus_2))
+print(" Σk^2 = n(n+1)(2n+1)/6 = "+str(ans_square_2))
