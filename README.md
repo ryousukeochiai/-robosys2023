@@ -1,3 +1,8 @@
+# robosys2023
+
+このリポジトリは千葉工業大学先進工学部未来ロボティクス学科のロボットシステム学内で取り扱った練習用リポジトリです。
+
+
 # plusコマンド
 [![test](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml)
 
