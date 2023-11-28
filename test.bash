@@ -11,10 +11,10 @@ ng () {
 res=0
 
 out=$(seq 5 | ./plus)
-[ "${out}" = " Σk = -15.0
- Σk^2 = 55.0
- Σk = n(n+1)/2 = -15.0
- Σk^2 = n(n+1)(2n+1)/6 = 55.0" ] || ng ${LINENO} "Invalid output"
+[ "${out}" = "15.0
+55.0
+15.0
+55.0" ] || ng ${LINENO} "Invalid output"
 ### STRANGE INPUT ###
 out=$(echo あ | ./plus)
 if [ "$?" = 1 ] || [ -z "${out}" ]; then
