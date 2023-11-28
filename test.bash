@@ -3,9 +3,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 ng () {
-  local res=1
-  echo "NG at Line $1: $2"
-  return $res
+      echo NG at Line $1
+      res=1
 }
 
 res=0
@@ -15,20 +14,14 @@ out=$(seq 5 | ./plus)
 55.0
 15.0
 55.0" ] || ng ${LINENO} "Invalid output"
-### STRANGE INPUT ###
+
 out=$(echo あ | ./plus)
-if [ "$?" = 1 ] || [ -z "${out}" ]; then
-  ng ${LINENO} "Invalid input 'あ'"
-fi
-echo "out: ${out}"
-echo "\$out: $out"
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
 
 out=$(echo | ./plus) #空文字
-if [ "$?" = 1 ] || [ -z "${out}" ]; then
-  ng ${LINENO} "Invalid input (empty)"
-fi
-echo "out: ${out}"
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
 
-[ "$?" = 0 ] && echo OK
-exit $?
-
+[ "$res" = 0 ] && echo OK
+  exit $res

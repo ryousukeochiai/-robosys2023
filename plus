@@ -5,14 +5,10 @@
 import sys
 
 def tonum(s):
-    try:
-        return int(s)
-    except ValueError:
-        try:
-            return float(s)
-        except ValueError:
-            print(f"Error: Invalid input '{s}'")
-            sys.exit(1)
+      try:
+          return int(s)
+      except:
+          return float(s)
 
 lines = list(sys.stdin)
 
