@@ -26,16 +26,14 @@ for line in lines:
     ans_plus_1 += num
     ans_square_1 += num ** 2
 
-# 計算2: Σk および Σk^2（Σ計算によって求めた場合）
+# 計算2: Σk および Σk^2（Σ計算によって求めた場合)
+first_line = tonum(lines[0].strip())
 last_line = tonum(lines[-1].strip())
-ans_plus_2 = (last_line * (last_line + 1)) / 2
-ans_square_2 = (last_line * (last_line + 1) * (2 * last_line + 1)) / 6
+ans_plus_2 = ((last_line * (last_line + 1)) / 2) - (((first_line-1) * ((first_line - 1) + 1)) / 2)
+ans_square_2 = ((last_line * (last_line + 1) * (2 * last_line + 1)) / 6) - (((first_line -1) * ((first_line - 1) + 1) * (2 * (first_line-1) + 1)) / 6)
 
 # 結果の表示
-print("n = "+str(last_line))
-print("足し合わせから求める")
 print(" Σk = "+str(ans_plus_1))
 print(" Σk^2 = "+str(ans_square_1))
-print("シグマ計算より求める")
 print(" Σk = n(n+1)/2 = "+str(ans_plus_2))
 print(" Σk^2 = n(n+1)(2n+1)/6 = "+str(ans_square_2))

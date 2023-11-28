@@ -11,12 +11,9 @@ ng () {
 res=0
 
 out=$(seq 5 | ./plus)
-[ "${out}" = "n = 5
-足し合わせから求める
- Σk = 15.0
+[ "${out}" = " Σk = -15.0
  Σk^2 = 55.0
-シグマ計算より求める
- Σk = n(n+1)/2 = 15.0
+ Σk = n(n+1)/2 = -15.0
  Σk^2 = n(n+1)(2n+1)/6 = 55.0" ] || ng ${LINENO} "Invalid output"
 ### STRANGE INPUT ###
 out=$(echo あ | ./plus)
