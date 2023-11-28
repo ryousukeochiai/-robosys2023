@@ -1,8 +1,3 @@
-# robosys2023
-
-このリポジトリは千葉工業大学先進工学部未来ロボティクス学科のロボットシステム学内で取り扱った練習用リポジトリです。
-
-
 # plusコマンド
 [![test](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml)
 
@@ -76,7 +71,7 @@ $ seq 5 10  | ./plus
 * Python
   * テスト済み: 3.7〜3.10
 
-* Ubuntu 20.04 on Windows
+* Ubuntu 20.04
 
 ## ライセンス
 * このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
