@@ -1,28 +1,23 @@
-# robosys2023
-# SPDX-FileCopyrightText: 2023 Ryousuke Ochiai 　　　　　
-# SPDX-License-Identifier: BSD-3-Clause
-ロボットシステム学2023
-* このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-* このパッケージは，aaa由来のコード（© 2022 Hoge Fuge）を利用しています．
-* このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
-* [ryuichiueda/my_slides robosys_2022](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)
-
 # plusコマンド
 [![test](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/ryousukeochiai/robosys2023/actions/workflows/test.yml)
 
-標準入力から数字を読み込み以下の要素を足し合わせとシグマ計算によって求める
+標準入力から数字を読み込み以下の要素を出力する
 
-1.数列の合計
+1行目:数列の合計を足し合わせにより求める
 
-2.数列の平方の合計
+2行目:数列の平方の合計を足し合わせにより求める
 
-#インストール方法
+3行目:数列の合計をシグマ計算により求める
+
+4行目:数列の平方の合計をシグマ計算により求める
+
+##インストール方法
 
 以下のコマンドを入力してください
 
 $ git clone https://github.com/ryousukeochiai/robosys2023.git
 
-$ cd robosys2022
+$ cd robosys2023
 
 ## 実行例
 
@@ -38,6 +33,7 @@ $ seq 5 | ./plus
  Σk^2 = 55.0
  Σk = n(n+1)/2 = -15.0
  Σk^2 = n(n+1)(2n+1)/6 = 55.0
+
 
 例2
 
@@ -57,4 +53,11 @@ $ seq 5 10  | ./plus
   * テスト済み: 3.7〜3.10
 
 * Ubuntu 20.04 on Windows
+
+##LISENCE
+* このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
+* このパッケージは，aaa由来のコード（© 2022 Hoge Fuge）を利用しています．
+* このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+* [ryuichiueda/my_slides/robosys_2022](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)
+
 * © 2023 Ryousuke Ochiai
